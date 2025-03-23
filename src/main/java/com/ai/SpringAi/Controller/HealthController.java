@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1")
-public class Health {
+public class HealthController {
     @GetMapping("/health")
     public String healthCheck() {
         return "Spring AI Application is running";

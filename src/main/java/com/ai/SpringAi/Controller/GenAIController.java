@@ -19,4 +19,10 @@ public class GenAIController {
     public String getResponseOptions(@RequestParam String prompt) {
         return chatService.getResponseOptions(prompt);
     }
+    @GetMapping("/generate-recipe")
+    public String generateRecipe(@RequestParam String ingredients,
+                                 @RequestParam String cuisine,
+                                 @RequestParam String dietaryRestrictions) {
+        return chatService.createRecipe(ingredients, cuisine, dietaryRestrictions);
+    }
 }

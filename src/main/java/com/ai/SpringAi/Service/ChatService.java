@@ -30,5 +30,14 @@ public class ChatService {
                 ));
         return response.getResult().getOutput().getText();
     }
+    public String createRecipe(String ingredients, String cuisine, String dietaryRestrictions) {
+        // Create the prompt template
+        String template = "Please consider the following dietary restrictions: " + dietaryRestrictions + ".\n" +
+                "Cuisine: " + cuisine + ".\n" +
+                "Ingredients: " + ingredients + ".\n" +
+                "Please provide me with a detailed recipe including a title, cooking instructions, and serving suggestions.";
 
+        // Call the AI model with the recipe prompt
+        return getResponse(template);
+    }
 }
